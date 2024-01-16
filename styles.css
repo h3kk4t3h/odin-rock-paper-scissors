@@ -1,31 +1,31 @@
 :root {
-  --primary-color: #8ecae6;
-  --secondary-color: #219ebc;
-  --tertiary-color: #023047;
-  --accent-color: #ffb703;
-  --highlight-color: #fb8500;
+  /* CSS HEX */
+  --smoky-black: #0a0903ff;
+  --red: #ff0000ff;
+  --ut-orange: #ff8200ff;
+  --amber: #ffc100ff;
+  --vanilla: #ffeaaeff;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-}
-
-.title {
-  font-family: 'Bungee Spice', sans-serif;
-  font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  margin: 1rem 0;
-
 }
 
 body {
-  background-color: var(--primary-color);
-  color: var(--tertiary-color);
-  font-family: 'Roboto', sans-serif;
+  background-color: var(--smoky-black);
+  color: var(--vanilla);
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   display: flex;
@@ -33,39 +33,55 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  animation: fadeIn 2s ease-in;
+}
 
+.title {
+  font-family: "Bungee Spice", sans-serif;
+  color: var(--amber);
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem 0;
 }
 
 a {
-  color: var(--accent-color);
-  font-family: 'Roboto', sans-serif;
+  color: var(--amber);
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   text-decoration: none;
-
 }
 
 button {
-  background-color: var(--secondary-color);
-  color: var(--highlight-color);
-  font-family: 'Roboto', sans-serif;
+  background-color: var(--ut-orange);
+  color: var(--smoky-black);
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
-
+  transition: background-color 0.3s ease;
 }
 
-#reset {
+button:hover {
+  background-color: var(--red);
+  color: var(--vanilla);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.reset {
   background-color: var(--accent-color);
   color: var(--highlight-color);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
-
+  display: none;
 }
 
 .container-buttons {
@@ -77,7 +93,7 @@ button {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-
+  margin-bottom: 2rem;
 }
 
 .choice {
@@ -86,7 +102,6 @@ button {
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
-
 }
 
 .results {
@@ -95,7 +110,8 @@ button {
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
-  
+  font-size: 1.5rem;
+  color: var(--accent-color);
 }
 
 .container-score {
@@ -116,7 +132,6 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
 }
 
 .container-reset {
@@ -128,13 +143,8 @@ button {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-
 }
-.reset {
-  font-size: 1.5rem;
-  margin: 0 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+
+#reset {
+  display: block !important;
 }
