@@ -108,7 +108,7 @@ function resetGame() {
   // Enable and show the game buttons
   buttons.forEach((button) => {
     button.disabled = false;
-    button.style.display = "inline-block"; // Change this to your original display setting
+    button.style.display = "inline-block";
   });
 
   // Disable and hide the reset button
@@ -119,7 +119,7 @@ function resetGame() {
 
 document.getElementById("reset").addEventListener("click", resetGame);
 
-// Function to check if the game is over (i.e., if a player has reached 5 points)
+// Function to check if the game is over
 function isGameOver() {
   if (playerScore === 5 || computerScore === 5) {
     // Hide the game buttons
