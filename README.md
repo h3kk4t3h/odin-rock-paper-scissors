@@ -1,6 +1,6 @@
 # 🪨📜✂️ Odin Rock Paper Scissors 🪨📜✂️
 
-This is a fun and interactive game of Rock, Paper, Scissors. It's a part of my journey learning web development with [The Odin Project](https://www.theodinproject.com/).
+This is simple implementation of Rock, Paper, Scissors. It's a part of my journey learning web development with [The Odin Project](https://www.theodinproject.com/).
 
 ## 🚀 Features
 
@@ -14,4 +14,4 @@ This is a fun and interactive game of Rock, Paper, Scissors. It's a part of my j
 - CSS
 - JavaScript
 
-Enjoy the game! 😄
+Feel free to contribute! 😄
