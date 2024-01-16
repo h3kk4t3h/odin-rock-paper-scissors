@@ -75,7 +75,6 @@ function playRound(playerSelection) {
     resetButton.style.display = "block";
   }
 }
-
 let buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", function (event) {
@@ -106,9 +105,10 @@ function resetGame() {
     console.error("Element with id 'score' does not exist");
   }
 
-  // Enable the game buttons
+  // Enable and show the game buttons
   buttons.forEach((button) => {
     button.disabled = false;
+    button.style.display = "inline-block"; // Change this to your original display setting
   });
 
   // Disable and hide the reset button
@@ -118,3 +118,20 @@ function resetGame() {
 }
 
 document.getElementById("reset").addEventListener("click", resetGame);
+
+// Function to check if the game is over (i.e., if a player has reached 5 points)
+function isGameOver() {
+  if (playerScore === 5 || computerScore === 5) {
+    // Hide the game buttons
+    buttons.forEach((button) => {
+      if (button.id !== "reset") {
+        button.style.display = "none";
+      }
+    });
+    // Show the reset button
+    let resetButton = document.querySelector(".reset");
+    resetButton.style.display = "inline-block";
+    return true;
+  }
+  return false;
+}
