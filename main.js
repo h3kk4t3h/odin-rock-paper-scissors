@@ -88,13 +88,23 @@ buttons.forEach((button) => {
 // Hide the reset button at the start of the game
 document.querySelector(".reset").style.display = "none";
 
-// Update the resetGame function to hide the reset button when the game restarts
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
-  document.getElementById("results").textContent = "";
-  document.getElementById("score").textContent = "";
-  document.getElementById("message").textContent = "";
+
+  let resultsElement = document.getElementById("results");
+  if (resultsElement) {
+    resultsElement.textContent = "";
+  } else {
+    console.error("Element with id 'results' does not exist");
+  }
+
+  let scoreElement = document.getElementById("score");
+  if (scoreElement) {
+    scoreElement.textContent = "";
+  } else {
+    console.error("Element with id 'score' does not exist");
+  }
 
   // Enable the game buttons
   buttons.forEach((button) => {
@@ -107,5 +117,4 @@ function resetGame() {
   resetButton.style.display = "none";
 }
 
-// Add event listener to the reset button
 document.getElementById("reset").addEventListener("click", resetGame);
